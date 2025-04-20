@@ -8,7 +8,7 @@
     <title>Khush Patel</title>
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/all.min.css"> -->
     <link rel="stylesheet" href="assets/css/stylesheet.css">
     <link rel="stylesheet" href="assets/css/media.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -27,7 +27,7 @@
         #preloader {
             height: 100vh;
             z-index: 1000;
-            transition: 2s all !important;
+            /* transition: 2s all !important; */
         }
 
         .preloader {
@@ -102,7 +102,7 @@
             }
 
             100% {
-                transform: rotate(360deg);
+                transform: rotate(720deg);
             }
         }
 
@@ -137,7 +137,9 @@
     <script>
         $(window).on("load", function () {
             $(".preloader-wrapper").fadeOut("slow")
-            element.style.webkitAnimationPlayState = "paused";
+
+
+            // element.style.webkitAnimationPlayState = "paused";
         });
         // document.getElementById('icons').style.animation = "comeInNegetive";
         // document.getElementById('subIcons').style.animation = "floatIconBanner";
@@ -207,6 +209,11 @@
             </div>
         </nav>
     </header>
+
+
+
+
+
     <section id="projects">
         <div class="container">
             <p class="h1 heading mb-5 fontBorder">Projects</p>

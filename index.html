@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="black">
+    <meta name="theme-color" content="#000000">
     <title>Khush Patel</title>
-    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
     <link rel="stylesheet" href="assets/css/media.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -22,7 +20,7 @@
 
 </head>
 
-<body class="bg-black position-relative" id="home">
+<body class="bg-black" id="home">
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/jquery-2.1.4.min.js"></script>
 
@@ -31,7 +29,7 @@
         #preloader {
             height: 100vh;
             z-index: 1000;
-            transition: 2s all !important;
+            /* transition: 2s all !important; */
         }
 
         .preloader {
@@ -106,7 +104,7 @@
             }
 
             100% {
-                transform: rotate(360deg);
+                transform: rotate(720deg);
             }
         }
 
@@ -141,7 +139,9 @@
     <script>
         $(window).on("load", function () {
             $(".preloader-wrapper").fadeOut("slow")
-            element.style.webkitAnimationPlayState = "paused";
+
+
+            // element.style.webkitAnimationPlayState = "paused";
         });
         // document.getElementById('icons').style.animation = "comeInNegetive";
         // document.getElementById('subIcons').style.animation = "floatIconBanner";
@@ -158,8 +158,6 @@
             </div>
         </div>
     </div>
-
-
 
 
     <div class="goToTop">
@@ -778,8 +776,7 @@
                         </div>
                         <div class="col-md-8 col-12">
                             <label for="inputEmail4" class="form-label text-black">Discription</label>
-                            <input type="text" class="form-control bg-white text-black" placeholder="Discription"
-                                id="inputEmail4">
+                            <input type="text" class="form-control bg-white text-black" placeholder="Discription">
                         </div>
                         <button type="submit" class="Button contact">Contact Me</button>
                     </form>
