@@ -74,121 +74,7 @@ a {
 }
 
 
-
-#preloader {
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: #000000;
-  transition: 2s all !important;
-}
-
 /* From Uiverse.io by G4b413l */
-.preloader {
-  --uib-size: 35px;
-  --uib-speed: 0.8s;
-  --uib-color: #5D3FD3;
-  position: relative;
-  display: inline-block;
-  height: var(--uib-size);
-  width: var(--uib-size);
-  animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
-}
-
-.circle {
-  position: absolute;
-  height: 100%;
-  width: 30%;
-}
-
-.circle:after {
-  content: '';
-  position: absolute;
-  height: 0%;
-  width: 100%;
-  padding-bottom: 100%;
-  background-color: var(--uib-color);
-  border-radius: 50%;
-}
-
-.circle:nth-child(1) {
-  bottom: 5%;
-  left: 0;
-  transform: rotate(60deg);
-  transform-origin: 50% 85%;
-}
-
-.circle:nth-child(1)::after {
-  bottom: 0;
-  left: 0;
-  animation: wobble1 var(--uib-speed) infinite ease-in-out;
-  animation-delay: calc(var(--uib-speed) * -0.3);
-}
-
-.circle:nth-child(2) {
-  bottom: 5%;
-  right: 0;
-  transform: rotate(-60deg);
-  transform-origin: 50% 85%;
-}
-
-.circle:nth-child(2)::after {
-  bottom: 0;
-  left: 0;
-  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
-}
-
-.circle:nth-child(3) {
-  bottom: -5%;
-  left: 0;
-  transform: translateX(116.666%);
-}
-
-.circle:nth-child(3)::after {
-  top: 0;
-  left: 0;
-  animation: wobble2 var(--uib-speed) infinite ease-in-out;
-}
-
-@keyframes spin78236 {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes wobble1 {
-
-  0%,
-  100% {
-    transform: translateY(0%) scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(-66%) scale(0.65);
-    opacity: 0.8;
-  }
-}
-
-@keyframes wobble2 {
-
-  0%,
-  100% {
-    transform: translateY(0%) scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(66%) scale(0.65);
-    opacity: 0.8;
-  }
-}
 
 
 .goToTop {
@@ -251,7 +137,8 @@ section.about {
 section.contact {
   animation: appearContact linear;
   animation-timeline: view();
-  animation-range: entry -10% exit -10%;
+  animation-range: entry -10% cover 80%;
+
 }
 
 .edu-content,
@@ -776,55 +663,45 @@ p.contact.heading:after {
 }
 
 
-
-
-
-.flowRibbon {
-  margin-top: 2rem;
-  width: 90%;
-  max-width: 1536px;
-  margin-inline: auto;
-  height: 100px;
-  position: relative;
+.infScroll {
+  font-size: 15px;
+  padding-block: 8px;
+  border-block: 1px solid;
   overflow: hidden;
-  mask-image: linear-gradient(to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 20%,
-      rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0));
+  user-select: none;
+  background: #00000059;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(6.7px);
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap);
 }
 
-@keyframes scrollLeft {
+.infScroll ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+
+  animation: scroll 5s linear infinite;
+}
+
+.infScroll:active ul {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
   to {
-    left: -220px;
+      transform: translateX(calc(-100% - var(--gap)));
   }
 }
 
-@keyframes scrollRight {
-  to {
-    right: -220px;
-  }
+.language {
+  color: white;
+  font-size: 2rem;
 }
 
-.flowItemLeft,
-.flowItemRight {
-  width: 200px;
-  height: 100px;
-  /* background-color: #ffffff; */
-  font-size: 3.5rem;
-  border-radius: 6px;
-  position: absolute;
-  animation-timing-function: linear;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-}
 
-.flowItemLeft {
-  left: max(calc(150px * 7), 100%);
-  animation-name: scrollLeft;
-}
-
-.flowItemRight {
-  right: max(calc(150px * 7), calc(100% + 150px));
-  animation-name: scrollRight;
-}

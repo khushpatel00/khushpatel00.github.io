@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="black">
     <title>Khush Patel</title>
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
@@ -25,7 +25,131 @@
 <body class="bg-black position-relative" id="home">
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/jquery-2.1.4.min.js"></script>
-    <div id="preloader" class="position-fixed preloader-wrapper">
+
+    <!-- forPreloading -->
+    <style>
+        #preloader {
+            height: 100vh;
+            z-index: 1000;
+            transition: 2s all !important;
+        }
+
+        .preloader {
+            --uib-size: 35px;
+            --uib-speed: 0.8s;
+            --uib-color: #5D3FD3;
+            position: relative;
+            display: inline-block;
+            height: var(--uib-size);
+            width: var(--uib-size);
+            animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+        }
+
+        .circle {
+            position: absolute;
+            height: 100%;
+            width: 30%;
+        }
+
+        .circle:after {
+            content: '';
+            position: absolute;
+            height: 0%;
+            width: 100%;
+            padding-bottom: 100%;
+            background-color: var(--uib-color);
+            border-radius: 50%;
+        }
+
+        .circle:nth-child(1) {
+            bottom: 5%;
+            left: 0;
+            transform: rotate(60deg);
+            transform-origin: 50% 85%;
+        }
+
+        .circle:nth-child(1)::after {
+            bottom: 0;
+            left: 0;
+            animation: wobble1 var(--uib-speed) infinite ease-in-out;
+            animation-delay: calc(var(--uib-speed) * -0.3);
+        }
+
+        .circle:nth-child(2) {
+            bottom: 5%;
+            right: 0;
+            transform: rotate(-60deg);
+            transform-origin: 50% 85%;
+        }
+
+        .circle:nth-child(2)::after {
+            bottom: 0;
+            left: 0;
+            animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
+        }
+
+        .circle:nth-child(3) {
+            bottom: -5%;
+            left: 0;
+            transform: translateX(116.666%);
+        }
+
+        .circle:nth-child(3)::after {
+            top: 0;
+            left: 0;
+            animation: wobble2 var(--uib-speed) infinite ease-in-out;
+        }
+
+        @keyframes spin78236 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes wobble1 {
+
+            0%,
+            100% {
+                transform: translateY(0%) scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-66%) scale(0.65);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes wobble2 {
+
+            0%,
+            100% {
+                transform: translateY(0%) scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(66%) scale(0.65);
+                opacity: 0.8;
+            }
+        }
+    </style>
+    <script>
+        $(window).on("load", function () {
+            $(".preloader-wrapper").fadeOut("slow")
+            element.style.webkitAnimationPlayState = "paused";
+        });
+        // document.getElementById('icons').style.animation = "comeInNegetive";
+        // document.getElementById('subIcons').style.animation = "floatIconBanner";
+    </script>
+
+
+
+    <div id="preloader" class="position-fixed top-0 start-0 w-100 bg-black preloader-wrapper">
         <div class="d-flex justify-content-center h-100 align-items-center">
             <div class="preloader">
                 <div class="circle"></div>
@@ -34,6 +158,10 @@
             </div>
         </div>
     </div>
+
+
+
+
     <div class="goToTop">
         <a href="#home" class="text-decoration-none text-end" style="color: transparent;">
             Go To Top <!--<i class="fa-solid fa-arrow-up" style="text-shadow: none; font-size: 0.75rem;"></i>  -->
@@ -228,46 +356,148 @@
     <!-- about end -->
 
 
-
+    <!-- 
     <section class="overflow-hidden w-100 mt-5 pt-5 noAnim" style="height: 60vh;">
         <div class="flowRibbonRight pt-5 mt-5" style="transform: rotate(5deg);">
             <div class="flowItemRight fontBorder flowItem1" style="animation-delay: calc(30s / 7 * (7 - 1) * -1)">CSS
             </div>
             <div class="flowItemRight fontBorder flowItem2" style="animation-delay: calc(30s / 7 * (7 - 2) * -1)">
-                MediaQuery</div>
+                MQ</div>
             <div class="flowItemRight fontBorder flowItem3" style="animation-delay: calc(30s / 7 * (7 - 3) * -1)">HTML
             </div>
             <div class="flowItemRight fontBorder flowItem4" style="animation-delay: calc(30s / 7 * (7 - 4) * -1)">
                 BootStrap</div>
             <div class="flowItemRight fontBorder flowItem5" style="animation-delay: calc(30s / 7 * (7 - 5) * -1)">
-                Javascript</div>
+                JS</div>
             <div class="flowItemRight fontBorder flowItem6" style="animation-delay: calc(30s / 7 * (7 - 6) * -1)">C
             </div>
             <div class="flowItemRight fontBorder flowItem7" style="animation-delay: calc(30s / 7 * (7 - 7) * -1)">C++
             </div>
-            <!-- <div class="flowItemLeft fontBorder flowItem8" style="animation-delay: calc(30s / 8 * (8 - 8) * -1)"></div> -->
+            <div class="flowItemLeft fontBorder flowItem8" style="animation-delay: calc(30s / 8 * (8 - 8) * -1)"></div> 
         </div>
         <div class="flowRibbonLeft pt-5 mt-5" style="transform: rotate(-5deg);">
             <div class="flowItemLeft fontBorder flowItem1" style="animation-delay: calc(30s / 7 * (7 - 1) * -1)">CSS
             </div>
             <div class="flowItemLeft fontBorder flowItem2" style="animation-delay: calc(30s / 7 * (7 - 2) * -1)">
-                MediaQuery</div>
+                MQ</div>
             <div class="flowItemLeft fontBorder flowItem3" style="animation-delay: calc(30s / 7 * (7 - 3) * -1)">HTML
             </div>
             <div class="flowItemLeft fontBorder flowItem4" style="animation-delay: calc(30s / 7 * (7 - 4) * -1)">
                 BootStrap</div>
             <div class="flowItemLeft fontBorder flowItem5" style="animation-delay: calc(30s / 7 * (7 - 5) * -1)">
-                Javascript</div>
+                JS</div>
             <div class="flowItemLeft fontBorder flowItem6" style="animation-delay: calc(30s / 7 * (7 - 6) * -1)">C</div>
             <div class="flowItemLeft fontBorder flowItem7" style="animation-delay: calc(30s / 7 * (7 - 7) * -1)">C++
             </div>
-            <!-- <div class="flowItemLeft fontBorder flowItem8" style="animation-delay: calc(30s / 8 * (8 - 8) * -1)"></div> -->
+            <div class="flowItemLeft fontBorder flowItem8" style="animation-delay: calc(30s / 8 * (8 - 8) * -1)"></div> 
         </div>
 
+    </section> -->
+
+    <section class="overflow-hidden" style="padding: 5rem 0;">
+
+        <div class="infScroll" style="transform: rotate(-5deg);">
+            <ul class="d-flex m-auto my-3">
+                <li>
+                    <span class="language">CSS</span>
+                </li>
+                <li>
+                    <span class="language">MediaQuery</span>
+                </li>
+                <li class="plus">
+                    <span class="language">HTML</span>
+                </li>
+                <li>
+                    <span class="language">Bootstrap</span>
+                </li>
+                <li>
+                    <span class="language">Javascript</span>
+                </li>
+                <li>
+                    <span class="language">C</span>
+                </li>
+                <li>
+                    <span class="language">C++</span>
+                </li>
+            </ul>
+            <ul aria-hidden="true" class="d-flex m-auto my-3">
+                <li>
+                    <span class="language">CSS</span>
+                </li>
+                <li>
+                    <span class="language">MediaQuery</span>
+                </li>
+                <li>
+                    <span class="language">HTML</span>
+                </li>
+                <li>
+                    <span class="language">Bootstrap</span>
+                </li>
+                <li>
+                    <span class="language">Javascript</span>
+                </li>
+                <li>
+                    <span class="language">C</span>
+                </li>
+                <li>
+                    <span class="language">C++</span>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="infScroll" style="transform: rotate(5deg);">
+            <ul class="d-flex m-auto my-3" style="animation-delay: 2s;">
+                <li>
+                    <span class="language">CSS</span>
+                </li>
+                <li>
+                    <span class="language">MediaQuery</span>
+                </li>
+                <li class="plus">
+                    <span class="language">HTML</span>
+                </li>
+                <li>
+                    <span class="language">Bootstrap</span>
+                </li>
+                <li>
+                    <span class="language">Javascript</span>
+                </li>
+                <li>
+                    <span class="language">C</span>
+                </li>
+                <li>
+                    <span class="language">C++</span>
+                </li>
+            </ul>
+            <ul aria-hidden="true" class="d-flex m-auto my-3" style="animation-delay: 2s;">
+                <li>
+                    <span class="language">CSS</span>
+                </li>
+                <li>
+                    <span class="language">MediaQuery</span>
+                </li>
+                <li>
+                    <span class="language">HTML</span>
+                </li>
+                <li>
+                    <span class="language">Bootstrap</span>
+                </li>
+                <li>
+                    <span class="language">Javascript</span>
+                </li>
+                <li>
+                    <span class="language">C</span>
+                </li>
+                <li>
+                    <span class="language">C++</span>
+                </li>
+            </ul>
+        </div>
+
+
+
     </section>
-
-
-
     <!-- Education start -->
     <section class="education" id="education">
         <div class="container">
@@ -577,17 +807,7 @@
             loader.style.display = "none";
         })
     </script> -->
-    <script>
-        $(window).on("load", function () {
-            $(".preloader-wrapper").fadeOut("slow")
-            element.style.webkitAnimationPlayState = "paused";
-        });
-        // document.getElementById('icons').style.animation = "comeInNegetive";
-        // document.getElementById('subIcons').style.animation = "floatIconBanner";
-    </script>
-    <script>
-        element.style.webkitAnimationPlayState = "running";
-    </script>
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
