@@ -406,7 +406,7 @@ section.contact {
   top: 0;
 }
 
-.bannerImage img {
+.bannerImage .img {
   background: #2125294b;
   position: relative;
 }
@@ -418,13 +418,13 @@ section.contact {
   border: 1px solid white;
   border-left: 0;
   border-right: 0;
-  border-radius: 25%;
-  animation: circular 2s infinite;
+  /* border-radius: 25%; */
+  animation: circular 2.5s infinite;
   width: 264px;
   height: 264px;
 }
-.cir img{
-  animation: circularNegetive 2s infinite;
+.cir .img{
+  animation: circularNegetive 2.5s infinite;
   height: 264px;
   width: 264px;
 
@@ -433,17 +433,21 @@ section.contact {
 @keyframes circular {
   0% {
     transform: rotate(45deg);
+    border-radius: 20%;
   }
-
+  50%{
+    /* transform: rotate(180deg); */
+    border-radius: 50%;
+  }
   100% {
     transform: rotate(405deg);
+    border-radius: 20%;
   }
 }
 @keyframes circularNegetive {
   0% {
     transform: rotate(-45deg);
   }
-
   100% {
     transform: rotate(-405deg);
   }
