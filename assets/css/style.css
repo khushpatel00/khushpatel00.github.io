@@ -76,6 +76,54 @@ a {
 
 /* From Uiverse.io by G4b413l */
 
+.cir {
+  width: 264px;
+  height: 264px;
+  position: relative;
+  /* z-index: 0; */
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%; 
+    height: 200%;
+    background-color: black;
+    background-repeat: no-repeat; 
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 50%, 100% , 100% 100%, 100%;
+    /* background-image: linear-gradient(#0d6efd , #000000), linear-gradient(#000000, #ffffff), linear-gradient(#ffffff, #000000), linear-gradient(#ffffff, #000000); */
+    background-image: linear-gradient(#fff , #000000), linear-gradient(#000000, #ffffff), linear-gradient(#ffffff, #000000), linear-gradient(#ffffff, #000000);
+    animation: rotate 4s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: calc(100% - 2.5%);
+    height: calc(100% - 2.5%); 
+    background: black;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
 
 .goToTop {
   animation: GoToTopAnim;
@@ -268,7 +316,7 @@ section.contact {
 
 .bannerAnim {
   animation-name: comeIn;
-  animation-duration: 2s;
+  animation-duration: 2.5s; 
   /* animation-delay: 600ms; */
 }
 
@@ -280,15 +328,15 @@ section.contact {
 }
 
 .bannerAnimImg {
-  /* animation-delay: 2s; */
   animation-name: comeInImg;
-  animation-duration: 2s;
+  animation-duration: 3s;
+  /* animation-delay: 2s; */
 
 }
 
 @keyframes comeIn {
   0% {
-    transform: translateY(100%);
+    transform: translateY(200%); 
     filter: blur(15px);
 
   }
@@ -318,19 +366,18 @@ section.contact {
 }
 
 @keyframes comeInImg {
-  0% {
-    /* transform: translateY(100%); */
-    filter: blur(15px);
+  20% {
+    transform: translateY(200%); 
+    filter: blur(150px);
   }
-
+/* 
   50% {
-    /* transform: translateY(-10%); */
     filter: blur(3px);
 
-  }
+  } */
 
   100% {
-    /* transform: translateY(0); */
+    transform: translateY(0);
     filter: blur(0);
   }
 }
@@ -402,66 +449,13 @@ section.contact {
 }
 
 .bannerImage {
-  right: 0;
+  right: 0px;
   top: 0;
 }
 
 .bannerImage .img {
   background: #2125294b;
   position: relative;
-}
-
-.cir {
-  left: 0;
-  top: 0;
-  position: absolute;
-  border: 1px solid white;
-  border-left: 0;
-  border-right: 0;
-  /* border-radius: 25%; */
-  animation: circular 2.5s infinite;
-  width: 264px;
-  height: 264px;
-}
-.cir .img{
-  animation: circularNegetive 2.5s infinite;
-  height: 264px;
-  width: 264px;
-
-}
-
-@keyframes circular {
-  0% {
-    transform: rotate(45deg);
-    border-radius: 20%;
-  }
-  50%{
-    /* transform: rotate(180deg); */
-    border-radius: 50%;
-  }
-  100% {
-    transform: rotate(405deg);
-    border-radius: 20%;
-  }
-}
-@keyframes circularNegetive {
-  0% {
-    transform: rotate(-45deg);
-  }
-  100% {
-    transform: rotate(-405deg);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotateZ(0deg);
-  }
-
-  to {
-    transform: rotateZ(360deg);
-  }
-
 }
 
 /* banner end */
