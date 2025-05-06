@@ -93,14 +93,14 @@ a {
     z-index: -2;
     left: -50%;
     top: -50%;
-    width: 200%; 
+    width: 200%;
     height: 200%;
     background-color: black;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: 50% 50%, 50% 50%;
-    background-position: 0 50%, 100% , 100% 100%, 100%;
+    background-position: 0 50%, 100%, 100% 100%, 100%;
     /* background-image: linear-gradient(#0d6efd , #000000), linear-gradient(#000000, #ffffff), linear-gradient(#ffffff, #000000), linear-gradient(#ffffff, #000000); */
-    background-image: linear-gradient(#fff , #000000), linear-gradient(#000000, #ffffff), linear-gradient(#ffffff, #000000), linear-gradient(#ffffff, #000000);
+    background-image: linear-gradient(#fff, #000000), linear-gradient(#000000, #ffffff), linear-gradient(#ffffff, #000000), linear-gradient(#ffffff, #000000);
     animation: rotate 4s linear infinite;
   }
 
@@ -110,9 +110,9 @@ a {
     z-index: -1;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: calc(100% - 2.5%);
-    height: calc(100% - 2.5%); 
+    height: calc(100% - 2.5%);
     background: black;
     border-radius: 50%;
   }
@@ -189,7 +189,6 @@ section.contact {
 
 }
 
-.edu-content,
 .achieve-img,
 .project-img,
 .blog-img {
@@ -202,6 +201,8 @@ section.contact {
   animation: appearToTopEdu cubic-bezier(0.04, 0.5, 0, 1.01);
   animation-timeline: view();
   animation-range: entry -10% cover 100%;
+  margin: 20px 0 20px 12.5px;
+  justify-content: center;
 }
 
 .achieve-img {
@@ -316,7 +317,7 @@ section.contact {
 
 .bannerAnim {
   animation-name: comeIn;
-  animation-duration: 2.5s; 
+  animation-duration: 2.5s;
   /* animation-delay: 600ms; */
 }
 
@@ -336,7 +337,7 @@ section.contact {
 
 @keyframes comeIn {
   0% {
-    transform: translateY(200%); 
+    transform: translateY(200%);
     filter: blur(15px);
 
   }
@@ -367,10 +368,11 @@ section.contact {
 
 @keyframes comeInImg {
   20% {
-    transform: translateY(200%); 
+    transform: translateY(200%);
     filter: blur(150px);
   }
-/* 
+
+  /* 
   50% {
     filter: blur(3px);
 
@@ -532,10 +534,7 @@ p.contact.heading:after {
 /* education start */
 
 
-.edu-content {
-  margin: 20px 0 20px 12.5px;
-  justify-content: center;
-}
+
 
 .achieve-img img {
   margin: 50px auto;
