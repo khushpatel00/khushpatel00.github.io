@@ -617,26 +617,12 @@ p.contact.heading:after {
   flex: 4;
 }
 
-/* project end */
-
-
-
-
-
-/* HTML: <div class="ribbon">Your text content</div> */
-/* HTML: <div class="ribbon">Your text content</div> */
 .ribbon {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
-}
-
-.ribbon {
   --f: .5em;
-  /* control the folded part*/
   --r: .8em;
-  /* control the ribbon shape */
-
   position: absolute;
   top: 20px;
   left: calc(-0.115*var(--f));
@@ -651,7 +637,6 @@ p.contact.heading:after {
       calc(100% - var(--r)) calc(50% - var(--f)/2), 100% 0);
 }
 
-/* HTML: <div class="ribbon">Your text content</div> */
 .ribbonNegetive {
   font-size: 28px;
   font-weight: bold;
