@@ -657,13 +657,8 @@ p.contact.heading:after {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
-}
-
-.ribbonNegetive {
   --f: .5em;
-  /* control the folded part*/
   --r: .8em;
-  /* control the ribbon shape */
 
   position: absolute;
   bottom: 20px;
