@@ -15,3 +15,4 @@ function updateHeaderBackground() {
 window.addEventListener('scroll', updateHeaderBackground);
 
 document.addEventListener('DOMContentLoaded', updateHeaderBackground);
+

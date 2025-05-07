@@ -24,8 +24,15 @@ html {
 header {
   z-index: 99;
   transition: 1s;
-  margin: 30px 50px 0;
+  margin: 2% 5% 0;
+  top: 10px;
+  background: #0000008a;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border-radius: 10px;
 }
+
 .headerGlass {
   background: #0000008a;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
@@ -223,16 +230,16 @@ section.contact {
 @keyframes appearToTopEdu {
   0% {
     transform: translateY(800px);
-    -webkit-box-shadow: 0px 22px 161px -100px rgb(110, 196, 213);
-    -moz-box-shadow: 0px 22px 161px -100px rgb(110, 196, 213);
-    box-shadow: 0px 22px 161px -100px rgb(110, 196, 213);
+    -webkit-box-shadow: 0px 22px 161px -100px rgb(255, 0, 0);
+    -moz-box-shadow: 0px 22px 161px -100px rgb(255, 0, 0);
+    box-shadow: 0px 22px 161px -100px rgb(255, 0, 0);
   }
 
   100% {
     transform: translateY(-50%);
-    -webkit-box-shadow: 0px 15px 161px -60px rgb(96, 106, 201);
-    -moz-box-shadow: 0px 15px 161px -60px rgb(96, 106, 201);
-    box-shadow: 0px 15px 161px -60px rgb(96, 106, 201);
+    -webkit-box-shadow: 0px 15px 161px -60px rgba(45, 60, 203);
+    -moz-box-shadow: 0px 15px 161px -60px rgba(45, 60, 203);
+    box-shadow: 0px 15px 161px -60px rgba(45, 60, 203);
   }
 
 }
