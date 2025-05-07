@@ -15,7 +15,6 @@ html {
   -moz-filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
   -webkit-filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
   filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
-  /* padding-top: 25px; */
 }
 
 .logoText {
@@ -25,9 +24,8 @@ html {
 header {
   z-index: 99;
   transition: 1s;
-  margin: 50px;
+  margin: 30px 50px 0;
 }
-
 .headerGlass {
   background: #0000008a;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
@@ -175,7 +173,7 @@ section.about {
 section.contact {
   animation: appearContact linear;
   animation-timeline: view();
-  animation-range: entry -10% cover 80%;
+  animation-range: entry -10% cover 50%;
 
 }
 
