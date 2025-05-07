@@ -1,16 +1,16 @@
 (function () {
     var defaultOptions = {
 
-        frameRate: 150,
-        animationTime: 1500,
+        frameRate: 240,
+        animationTime: 2500,
         stepSize: 85,
         pulseAlgorithm: true,
         pulseScale: 4,
         pulseNormalize: 1,
-        accelerationDelta: 400,  // 50
-        accelerationMax: 20,   // 3
+        accelerationDelta: 10,  // 50
+        accelerationMax: 2,   // 3
         keyboardSupport: true,
-        arrowScroll: 500,
+        arrowScroll: 200,
         fixedBackground: true,
         excluded: ''
     };

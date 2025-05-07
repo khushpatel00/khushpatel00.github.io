@@ -15,6 +15,7 @@ html {
   -moz-filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
   -webkit-filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
   filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
+  /* padding-top: 25px; */
 }
 
 .logoText {
@@ -23,10 +24,21 @@ html {
 
 header {
   z-index: 99;
+  transition: 1s;
+  margin: 50px;
+}
+
+.headerGlass {
   background: #0000008a;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(6.7px);
+  padding: 0 15px;
+  border-radius: 10px;
+}
+
+.headerTransparent {
+  background-color: transparent;
 }
 
 ul li .nav-link {
@@ -80,47 +92,25 @@ a {
   width: 264px;
   height: 264px;
   position: relative;
-  /* z-index: 0; */
   border-radius: 50%;
   overflow: hidden;
   padding: 1.25rem;
   display: flex;
   justify-content: center;
+  box-shadow: inset -5px -15px 20px -10px whitesmoke;
+  animation: rotateShadow 5s infinite ease-in-out;
 
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -2;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    background-color: black;
-    background-repeat: no-repeat;
-    background-size: 50% 50%, 50% 50%;
-    background-position: 0 50%, 100%, 100% 100%, 100%;
-    /* background-image: linear-gradient(#0d6efd , #000000), linear-gradient(#000000, #ffffff), linear-gradient(#ffffff, #000000), linear-gradient(#ffffff, #000000); */
-    background-image: linear-gradient(#fff, #000000), linear-gradient(#000000, #ffffff), linear-gradient(#ffffff, #000000), linear-gradient(#ffffff, #000000);
-    animation: rotate 4s linear infinite;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 2.5%);
-    height: calc(100% - 2.5%);
-    background: black;
-    border-radius: 50%;
-  }
 }
 
-@keyframes rotate {
+@keyframes rotateShadow {
+  50% {
+    box-shadow: inset -15px -20px 22.5px -15px whitesmoke;
+
+  }
+
   100% {
-    transform: rotate(1turn);
+    box-shadow: inset -5px -15px 20px -10px whitesmoke;
+
   }
 }
 
@@ -368,8 +358,7 @@ section.contact {
 
 @keyframes comeInImg {
   20% {
-    transform: translateY(200%);
-    filter: blur(150px);
+    filter: blur(20px);
   }
 
   /* 
