@@ -1,14 +1,14 @@
 (function () {
     var defaultOptions = {
 
-        frameRate: 240,
-        animationTime: 2500,
-        stepSize: 85,
+        // frameRate: 120,
+        animationTime: 1500,
+        stepSize: 100,
         pulseAlgorithm: true,
         pulseScale: 4,
         pulseNormalize: 1,
-        accelerationDelta: 10,  // 50
-        accelerationMax: 2,   // 3
+        accelerationDelta: 1,  // 50
+        accelerationMax: 3,   // 3
         keyboardSupport: true,
         arrowScroll: 200,
         fixedBackground: true,
