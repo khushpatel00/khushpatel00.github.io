@@ -21,6 +21,7 @@ html {
   font-weight: 900 !important;
   transition: 0.3s;
 }
+
 .logoText:hover {
   letter-spacing: 5px;
 }
@@ -50,10 +51,12 @@ header {
   background-color: transparent;
   padding: 0 5px;
 }
-.letterTransition{
+
+.letterTransition {
   transition: 1s;
 }
-.letterTransition:hover{
+
+.letterTransition:hover {
   letter-spacing: 1px;
 }
 
@@ -139,7 +142,7 @@ a {
   font-size: 1.25rem;
   font-weight: 900;
   -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #ffffff;
+  -webkit-text-stroke-color: #ffffff !important;
   z-index: 999;
 }
 
@@ -319,7 +322,8 @@ section.contact {
   transition: 0.5s;
   top: 0;
 }
-.icons .subIcons:hover{
+
+.icons .subIcons:hover {
   opacity: 1;
 }
 
@@ -375,15 +379,17 @@ section.contact {
     filter: blur(10px);
   }
 
-  
+
 
   80% {
     filter: blur(0);
   }
-  90%{
+
+  90% {
     filter: blur(2px);
   }
-  100%{
+
+  100% {
     filter: blur(0);
   }
 
