@@ -3,7 +3,7 @@ const headerElement = document.querySelector('header');
 function updateHeaderBackground() {
     const headerRect = headerElement.getBoundingClientRect();
 
-    if (headerRect.top <= 10) {
+    if (headerRect.top <= 20) {
         headerElement.classList.add('headerGlass');
         headerElement.classList.remove('headerTransparent');
     } else {
@@ -15,4 +15,3 @@ function updateHeaderBackground() {
 window.addEventListener('scroll', updateHeaderBackground);
 
 document.addEventListener('DOMContentLoaded', updateHeaderBackground);
-

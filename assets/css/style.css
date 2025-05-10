@@ -19,11 +19,15 @@ html {
 
 .logoText {
   font-weight: 900 !important;
+  transition: 0.3s;
+}
+.logoText:hover {
+  letter-spacing: 5px;
 }
 
 header {
   z-index: 99;
-  transition: 1s;
+  transition: 1.5s;
   margin: 2% 5% 0;
   top: 10px;
   background: #0000008a;
@@ -44,12 +48,17 @@ header {
 
 .headerTransparent {
   background-color: transparent;
+  padding: 0 5px;
+}
+.letterTransition{
+  transition: 1s;
+}
+.letterTransition:hover{
+  letter-spacing: 1px;
 }
 
 ul li .nav-link {
-
   position: relative;
-
 }
 
 ul li .nav-link::before {
@@ -70,6 +79,7 @@ ul li .nav-link:hover::before {
 
 ::-webkit-scrollbar {
   width: 3px;
+  height: 0px;
   -webkit-transition: 1s;
 }
 
@@ -304,20 +314,21 @@ section.contact {
 .icons .subIcons {
   animation-name: floatIconBanner;
   animation-duration: 6s;
+  opacity: 0.5;
   animation-iteration-count: infinite;
-  /* animation-delay: 600ms; */
+  transition: 0.5s;
   top: 0;
-  /* opacity: 0.5; */
+}
+.icons .subIcons:hover{
+  opacity: 1;
 }
 
 .bannerAnim {
   animation-name: comeIn;
   animation-duration: 2.5s;
-  /* animation-delay: 600ms; */
 }
 
 .bannerAnimP {
-  /* animation-delay: 600ms; */
   animation-name: comeInP;
   animation-duration: 2s;
 
@@ -326,8 +337,6 @@ section.contact {
 .bannerAnimImg {
   animation-name: comeInImg;
   animation-duration: 3s;
-  /* animation-delay: 2s; */
-
 }
 
 @keyframes comeIn {
@@ -363,19 +372,21 @@ section.contact {
 
 @keyframes comeInImg {
   20% {
-    filter: blur(20px);
+    filter: blur(10px);
   }
 
-  /* 
-  50% {
-    filter: blur(3px);
+  
 
-  } */
-
-  100% {
-    transform: translateY(0);
+  80% {
     filter: blur(0);
   }
+  90%{
+    filter: blur(2px);
+  }
+  100%{
+    filter: blur(0);
+  }
+
 }
 
 @keyframes comeInNegetive {
