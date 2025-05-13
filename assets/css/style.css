@@ -218,15 +218,29 @@ section.contact {
 
 }
 
-.progress:hover .progress-bar {
+/* .progress:hover .progress-bar {
   transform: translateX(0%);
-}
+} */
 
 .progress {
   animation: appearProgress cubic-bezier(0.04, 0.5, 0, 1.01);
   animation-timeline: view();
-  animation-range: entry -50% cover 70%;
+  animation-range: entry -50% cover 50%;
   transition: 0.5s;
+}
+.lineDivider{
+  position: relative;
+}
+
+.lineDivider:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 20px;
+  transform: rotate(90deg);
 }
 
 @keyframes appearToTop {
@@ -259,7 +273,7 @@ section.contact {
 
 @keyframes appearProgress {
   0% {
-    width: 0%;
+    width: 25%;
   }
 
   100% {
@@ -334,23 +348,25 @@ section.contact {
 
 .bannerAnimP {
   animation-name: comeInP;
-  animation-duration: 2s;
+  animation-duration: 3s;
 
 }
 
 .bannerAnimImg {
   animation-name: comeInImg;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 @keyframes comeIn {
   0% {
     transform: translateY(200%);
     filter: blur(15px);
+    height: 0 !important;
 
   }
 
   100% {
+    height: max-content;
     transform: translateY(0);
     filter: blur(0);
   }
@@ -361,14 +377,16 @@ section.contact {
     transform: translateY(100%);
     filter: blur(15px);
   }
-
+  
   50% {
+    height: 0 !important;
     transform: translateY(100%);
     filter: blur(15px);
 
   }
 
   100% {
+    height: max-content;
     transform: translateY(0);
     filter: blur(0);
   }
