@@ -228,7 +228,8 @@ section.contact {
   animation-range: entry -50% cover 50%;
   transition: 0.5s;
 }
-.lineDivider{
+
+.lineDivider {
   position: relative;
 }
 
@@ -377,7 +378,7 @@ section.contact {
     transform: translateY(100%);
     filter: blur(15px);
   }
-  
+
   50% {
     height: 0 !important;
     transform: translateY(100%);
@@ -705,7 +706,7 @@ p.contact.heading:after {
 .infScroll ul {
   list-style: none;
   flex-shrink: 0;
-  min-width: 100%;
+  min-width: 110%;
   display: flex;
   justify-content: space-between;
   align-items: center;

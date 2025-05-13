@@ -8,7 +8,7 @@
     <title>Khush Patel</title>
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="assets/css/all.min.css"> -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
     <link rel="stylesheet" href="assets/css/media.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -20,7 +20,7 @@
 
 <body class="bg-black" id="home">
     <script src="assets/js/smooth-scroll.js"></script>
-    <script src="assets/js/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
 
     <!-- forPreloading -->
     <style>
@@ -308,6 +308,25 @@
             </div>
     </section>
 
+    <div id="waveform">
+        <!-- the waveform will be rendered here -->
+    </div>
+
+    <script type="module">
+        import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+        const wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: '#4F4A85',
+            progressColor: '#383351',
+            url: 'AudioEdits/Kukkad_1.mp3',
+        })
+
+        wavesurfer.on('interaction', () => {
+            wavesurfer.play()
+        })
+    </script>
+
 
     <section id="contact" style="margin-top: 150px;" class="contact d-flex justify-content-center bg-white">
         <div class="container">
@@ -345,8 +364,9 @@
         </div>
         </div>
     </section>
-
+    <script src="assets/js/index.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 
 </body>
 
