@@ -308,26 +308,70 @@
             </div>
     </section>
 
-    <div id="waveform">
-        <!-- the waveform will be rendered here -->
-    </div>
 
+    <div style="color: #4F4A85;"></div>
+    <script src="assets/js/wavesurfer.esm.js"></script>
     <script type="module">
-        import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+        import WaveSurfer from './assets/js/wavesurfer.esm.js'
 
         const wavesurfer = WaveSurfer.create({
             container: '#waveform',
-            waveColor: '#4F4A85',
-            progressColor: '#383351',
-            url: 'AudioEdits/Kukkad_1.mp3',
-        })
+            waveColor: '#0d6efd',
+            progressColor: '#000',
+            // url: './assets/Kukkad_1.mp3',
+            url: './path/to/your/audio.mp3',
+            renderFunction: (channels, ctx) => {
+                const { width, height } = ctx.canvas
+                const scale = channels[0].length / width
+                const step = 10
 
-        wavesurfer.on('interaction', () => {
-            wavesurfer.play()
+                ctx.translate(0, height / 2)
+                ctx.strokeStyle = ctx.fillStyle
+                ctx.beginPath()
+
+                for (let i = 0; i < width; i += step * 2) {
+                    const index = Math.floor(i * scale)
+                    const value = Math.abs(channels[0][index])
+                    let x = i
+                    let y = value * height
+
+                    ctx.moveTo(x, 0)
+                    ctx.lineTo(x, y)
+                    ctx.arc(x + step / 2, y, step / 2, Math.PI, 0, true)
+                    ctx.lineTo(x + step, 0)
+
+                    x = x + step
+                    y = -y
+                    ctx.moveTo(x, 0)
+                    ctx.lineTo(x, y)
+                    ctx.arc(x + step / 2, y, step / 2, Math.PI, 0, false)
+                    ctx.lineTo(x + step, 0)
+                }
+
+                ctx.stroke()
+                ctx.closePath()
+            },
         })
+        play.onclick = function () {
+            wavesurfer.playPause();
+        }
+        pause.onclick = function () {
+            wavesurfer.stop();
+        }
     </script>
 
+    <div id="waveform" class="bg-black border rounded-3 bg-white p-3 px-4 my-5 m-auto" style="width: 85%;">
+        <!-- the waveform will be rendered here -->
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <span class="text-bg-dark px-2 me-3 py-2 rounded-3">{   Kukkad <!--remix --> &nbsp }</span>
 
+        <button class="bg-dark text-white border-0 rounded-2 p-2 px-3 me-3" id="play"> <i
+                class="fa-solid fa-play"></i>&nbsp;<i class="fa-solid fa-pause"></i></button> 
+        <button class="bg-dark text-white border-0 rounded-2 p-2 px-3 me-3" id="pause"> <i class="fa-solid fa-stop"></i>
+        </button>
+    </div>
     <section id="contact" style="margin-top: 150px;" class="contact d-flex justify-content-center bg-white">
         <div class="container">
             <p class="h1 heading pt-5 my-5 contact text-black">Contact</p>
