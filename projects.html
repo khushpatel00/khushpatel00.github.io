@@ -319,8 +319,8 @@
             container: '#waveform',
             waveColor: '#0d6efd',
             progressColor: '#000',
-            // url: './assets/Kukkad_1.mp3',
-            url: './path/to/your/audio.mp3',
+            url: './assets/Kukkad_1.mp3',
+            // url: './path/to/your/audio.mp3',
             renderFunction: (channels, ctx) => {
                 const { width, height } = ctx.canvas
                 const scale = channels[0].length / width
@@ -359,19 +359,105 @@
         pause.onclick = function () {
             wavesurfer.stop();
         }
+        {
+            const dropArea = document.querySelector('#drop')
+            dropArea.ondragenter = (e) => {
+                e.preventDefault()
+                e.target.classList.add('over')
+            }
+            dropArea.ondragleave = (e) => {
+                e.preventDefault()
+                e.target.classList.remove('over')
+            }
+            dropArea.ondragover = (e) => {
+                e.preventDefault()
+            }
+            dropArea.ondrop = (e) => {
+                e.preventDefault()
+                e.target.classList.remove('over')
+
+                // Read the audio file
+                const reader = new FileReader()
+                reader.onload = (event) => {
+                    wavesurfer.load(event.target.result)
+                }
+                reader.readAsDataURL(e.dataTransfer.files[0])
+
+                // Write the name of the file into the drop area
+                dropArea.textContent = e.dataTransfer.files[0].name
+                wavesurfer.empty()
+            }
+            document.body.ondrop = (e) => {
+                e.preventDefault()
+            }
+        }
+
     </script>
 
-    <div id="waveform" class="bg-black border rounded-3 bg-white p-3 px-4 my-5 m-auto" style="width: 85%;">
-        <!-- the waveform will be rendered here -->
-    </div>
-    <div class="d-flex justify-content-center align-items-center">
-        <span class="text-bg-dark px-2 me-3 py-2 rounded-3">{   Kukkad <!--remix --> &nbsp }</span>
 
-        <button class="bg-dark text-white border-0 rounded-2 p-2 px-3 me-3" id="play"> <i
-                class="fa-solid fa-play"></i>&nbsp;<i class="fa-solid fa-pause"></i></button> 
-        <button class="bg-dark text-white border-0 rounded-2 p-2 px-3 me-3" id="pause"> <i class="fa-solid fa-stop"></i>
-        </button>
-    </div>
+    <section>
+        <div class="container">
+            <p class="h1 text-white mt-5 heading">Library</p>
+        </div>
+
+        <div id="waveform" class="bg-black border rounded-4 bg-white p-3 px-4 mt-5 mb-3 m-auto" style="width: 85%;">
+            <!-- the waveform will be rendered here -->
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <span class="text-bg-dark px-2 me-3 py-2 rounded-3">{   Composed <!--remix --> &nbsp }</span>
+            <button class="bg-dark text-white border-0 rounded-2 p-2 px-3 me-3" id="play"> <i
+                    class="fa-solid fa-play"></i>&nbsp;<i class="fa-solid fa-pause"></i></button>
+            <button class="bg-dark text-white border-0 rounded-2 p-2 px-3 me-3" id="pause"> <i
+                    class="fa-solid fa-stop"></i>
+            </button>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div id="drop" style="border-radius: 1.5rem;" class="m-3 mt-5 col-lg-8 col-11 text-white">Drag-n-drop audio
+                file
+                from my Library below !</div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center container">
+            <div class="lib">
+                <div class="albumImage px-3 py-2">
+                    <img src="assets/images/blog2.png" class="img-fluid rounded-3 mx-1" alt="">
+                    <audio src="assets/Kukkad_1.mp3" draggable="true" controls></audio>
+                </div>
+                <div class="albumTitle text-center">
+                    <p class="text-white">Album Title</p>
+                </div>
+            </div>
+            <div class="lib">
+                <div class="albumImage px-3 py-2">
+                    <img src="assets/images/blog2.png" class="img-fluid rounded-3 mx-1" alt="">
+                </div>
+                <div class="albumTitle text-center">
+                    <p class="text-white">Album Title</p>
+                </div>
+            </div>
+            <div class="lib">
+                <div class="albumImage px-3 py-2">
+                    <img src="assets/images/blog2.png" class="img-fluid rounded-3 mx-1" alt="">
+                </div>
+                <div class="albumTitle text-center">
+                    <p class="text-white">Album Title</p>
+                </div>
+            </div>
+            <div class="lib">
+                <div class="albumImage px-3 py-2">
+                    <img src="assets/images/blog2.png" class="img-fluid rounded-3 mx-1" alt="">
+                </div>
+                <div class="albumTitle text-center">
+                    <p class="text-white">Album Title</p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
     <section id="contact" style="margin-top: 150px;" class="contact d-flex justify-content-center bg-white">
         <div class="container">
             <p class="h1 heading pt-5 my-5 contact text-black">Contact</p>
@@ -408,7 +494,6 @@
         </div>
         </div>
     </section>
-    <script src="assets/js/index.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/wavesurfer.js"></script>
 
