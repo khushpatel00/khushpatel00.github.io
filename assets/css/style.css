@@ -1,7 +1,6 @@
 /* .text-primary {
 color: #ff9700 !important;
 } */
-
 body {
   font-family: 'Outfit' !important;
   scroll-behavior: smooth !important;
@@ -15,6 +14,116 @@ html {
   -moz-filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
   -webkit-filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
   filter: saturate(1.8) brightness(-0.25) contrast(1.55) !important;
+}
+
+#preloader {
+  height: 100vh;
+  z-index: 1000;
+  /* transition: 2s all !important;*/
+}
+
+.preloader {
+  --uib-size: 35px;
+  --uib-speed: 0.8s;
+  --uib-color: #5D3FD3;
+  position: relative;
+  display: inline-block;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+}
+
+.circle {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+}
+
+.circle:after {
+  content: '';
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: var(--uib-color);
+  border-radius: 50%;
+}
+
+.circle:nth-child(1) {
+  bottom: 5%;
+  left: 0;
+  transform: rotate(60deg);
+  transform-origin: 50% 85%;
+}
+
+.circle:nth-child(1)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite ease-in-out;
+  animation-delay: calc(var(--uib-speed) * -0.3);
+}
+
+.circle:nth-child(2) {
+  bottom: 5%;
+  right: 0;
+  transform: rotate(-60deg);
+  transform-origin: 50% 85%;
+}
+
+.circle:nth-child(2)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
+}
+
+.circle:nth-child(3) {
+  bottom: -5%;
+  left: 0;
+  transform: translateX(116.666%);
+}
+
+.circle:nth-child(3)::after {
+  top: 0;
+  left: 0;
+  animation: wobble2 var(--uib-speed) infinite ease-in-out;
+}
+
+@keyframes spin78236 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes wobble1 {
+
+  0%,
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-66%) scale(0.65);
+    opacity: 0.8;
+  }
+}
+
+@keyframes wobble2 {
+
+  0%,
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(66%) scale(0.65);
+    opacity: 0.8;
+  }
 }
 
 .logoText {
@@ -32,7 +141,8 @@ header {
   margin: 2% 5% 0;
   top: 10px;
   background: #0000008a;
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+*/
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(6.7px);
   border-radius: 10px;
@@ -40,7 +150,8 @@ header {
 
 .headerGlass {
   background: #0000008a;
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+*/
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(6.7px);
   padding: 0 15px;
@@ -103,8 +214,29 @@ a {
   display: inline-block !important;
 }
 
+.moreOptions {
+  position: relative;
+}
 
-/* From Uiverse.io by G4b413l */
+.moreOptions li {
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  padding: 5px;
+  transition: 0.5s cubic-bezier(.42, .89, .03, 1.4);
+  margin: -20px -100px 0;
+  opacity: 0;
+}
+
+.moreOptions:hover li {
+  margin: 12px -100px;
+  opacity: 1;
+  background-color: #0000007c;
+  padding: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border-radius: 10px;
+}
 
 .cir {
   width: 264px;
@@ -117,21 +249,17 @@ a {
   justify-content: center;
   box-shadow: inset -5px -15px 20px -10px whitesmoke;
   animation: rotateShadow 5s infinite ease-in-out;
-
 }
 
 @keyframes rotateShadow {
   50% {
     box-shadow: inset -15px -20px 22.5px -15px whitesmoke;
-
   }
 
   100% {
     box-shadow: inset -5px -15px 20px -10px whitesmoke;
-
   }
 }
-
 
 .goToTop {
   animation: GoToTopAnim;
@@ -187,14 +315,12 @@ section.about {
   animation-range: entry -10% exit 0%;
   border-radius: 2rem;
   margin: 30px;
-
 }
 
 section.contact {
   animation: appearContact linear;
   animation-timeline: view();
   animation-range: entry -10% cover 50%;
-
 }
 
 .achieve-img,
@@ -215,13 +341,11 @@ section.contact {
 
 .achieve-img {
   animation-range: entry -10% exit 600% !important;
-
 }
 
 /* .progress:hover .progress-bar {
-  transform: translateX(0%);
+transform: translateX(0%);
 } */
-
 .progress {
   animation: appearProgress cubic-bezier(0.04, 0.5, 0, 1.01);
   animation-timeline: view();
@@ -252,7 +376,6 @@ section.contact {
   100% {
     transform: translateY(-50%);
   }
-
 }
 
 @keyframes appearToTopEdu {
@@ -269,7 +392,6 @@ section.contact {
     -moz-box-shadow: 0px 15px 161px -60px rgba(45, 60, 203);
     box-shadow: 0px 15px 161px -60px rgba(45, 60, 203);
   }
-
 }
 
 @keyframes appearProgress {
@@ -296,7 +418,6 @@ section.contact {
   }
 }
 
-
 @keyframes appear {
   0% {
     scale: 0.6;
@@ -309,13 +430,14 @@ section.contact {
 
 /* banner start */
 .bannerTitle {
-  /* font-size: 60px; */
+  /* font-size: 60px;
+*/
   font-weight: 700;
   color: transparent;
-  /* padding: 100px 0 50px; */
+  /* padding: 100px 0 50px;
+*/
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #0d6efd;
-
 }
 
 .bannerTitle .lead {
@@ -326,7 +448,8 @@ section.contact {
 .icons {
   animation: comeInNegetive;
   animation-duration: 3.5s;
-  /* animation-delay: 600ms; */
+  /* animation-delay: 600ms;
+*/
 }
 
 .icons .subIcons {
@@ -350,7 +473,6 @@ section.contact {
 .bannerAnimP {
   animation-name: comeInP;
   animation-duration: 3s;
-
 }
 
 .bannerAnimImg {
@@ -363,7 +485,6 @@ section.contact {
     transform: translateY(200%);
     filter: blur(15px);
     height: 0 !important;
-
   }
 
   100% {
@@ -383,7 +504,6 @@ section.contact {
     height: 0 !important;
     transform: translateY(100%);
     filter: blur(15px);
-
   }
 
   100% {
@@ -398,8 +518,6 @@ section.contact {
     filter: blur(10px);
   }
 
-
-
   80% {
     filter: blur(0);
   }
@@ -411,7 +529,6 @@ section.contact {
   100% {
     filter: blur(0);
   }
-
 }
 
 @keyframes comeInNegetive {
@@ -459,7 +576,8 @@ section.contact {
 
 .Button {
   font-weight: 700;
-  /* border: 0 solid; */
+  /* border: 0 solid;
+*/
   border-radius: 99rem;
   color: #000;
   background-color: white;
@@ -469,13 +587,15 @@ section.contact {
 }
 
 .Button:hover {
-  /* background-color: #fff; */
+  /* background-color: #fff;
+*/
   color: #000 !important;
   padding: 0.8rem 3.5rem;
 }
 
 .Button.contact:hover {
-  /* background-color: #fff; */
+  /* background-color: #fff;
+*/
   color: #000 !important;
   padding: 0.8rem 4rem;
 }
@@ -510,7 +630,6 @@ section.contact {
 /* .about p.heading:after {
 background-color: #000;
 } */
-
 p.heading,
 p.about.heading,
 p.contact.heading {
@@ -528,11 +647,9 @@ p.contact.heading:after {
   position: absolute;
   content: '';
   box-sizing: border-box;
-
   animation: afterLine linear;
   animation-timeline: view();
   animation-range: entry -30% exit 20%;
-
   background-color: #fff;
   height: 1px;
   width: 100%;
@@ -543,12 +660,10 @@ p.contact.heading:after {
 @keyframes afterLine {
   from {
     bottom: -50px;
-
   }
 
   to {
     bottom: 0;
-
   }
 }
 
@@ -562,10 +677,6 @@ p.contact.heading:after {
 
 /* about end */
 /* education start */
-
-
-
-
 .achieve-img img {
   margin: 50px auto;
 }
@@ -586,7 +697,8 @@ p.contact.heading:after {
 
 .blurry {
   animation: blurry;
-  /* animation-delay: 600ms; */
+  /* animation-delay: 600ms;
+*/
   animation-timeline: view();
   animation-range: entry -10% cover 50%;
 }
@@ -661,10 +773,7 @@ p.contact.heading:after {
   background: #ff0000;
   border-bottom: var(--f) solid #0005;
   border-right: var(--r) solid #0000;
-  clip-path:
-    polygon(0 0, 0 calc(100% - var(--f)), var(--f) 100%,
-      var(--f) calc(100% - var(--f)), 100% calc(100% - var(--f)),
-      calc(100% - var(--r)) calc(50% - var(--f)/2), 100% 0);
+  clip-path: polygon(0 0, 0 calc(100% - var(--f)), var(--f) 100%, var(--f) calc(100% - var(--f)), 100% calc(100% - var(--f)), calc(100% - var(--r)) calc(50% - var(--f)/2), 100% 0);
 }
 
 .ribbonNegetive {
@@ -673,7 +782,6 @@ p.contact.heading:after {
   color: #fff;
   --f: .5em;
   --r: .8em;
-
   position: absolute;
   bottom: 20px;
   right: calc(-0.17*var(--f));
@@ -682,12 +790,8 @@ p.contact.heading:after {
   background: #ff0000;
   border-top: var(--f) solid #0005;
   border-left: var(--r) solid #0000;
-  clip-path:
-    polygon(0 100%, 100% 100%, 100% var(--f), calc(100% - var(--f)) 0,
-      calc(100% - var(--f)) var(--f), 0 var(--f),
-      var(--r) calc(50% + var(--f)/2));
+  clip-path: polygon(0 100%, 100% 100%, 100% var(--f), calc(100% - var(--f)) 0, calc(100% - var(--f)) var(--f), 0 var(--f), var(--r) calc(50% + var(--f)/2));
 }
-
 
 .infScroll {
   font-size: 15px;
@@ -711,7 +815,6 @@ p.contact.heading:after {
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
-
   animation: scroll 5s linear infinite;
 }
 

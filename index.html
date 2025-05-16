@@ -25,119 +25,7 @@
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/jquery-3.6.1.min.js"></script>
 
-    <!-- forPreloading -->
-    <style>
-        #preloader {
-            height: 100vh;
-            z-index: 1000;
-            /* transition: 2s all !important; */
-        }
-
-        .preloader {
-            --uib-size: 35px;
-            --uib-speed: 0.8s;
-            --uib-color: #5D3FD3;
-            position: relative;
-            display: inline-block;
-            height: var(--uib-size);
-            width: var(--uib-size);
-            animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
-        }
-
-        .circle {
-            position: absolute;
-            height: 100%;
-            width: 30%;
-        }
-
-        .circle:after {
-            content: '';
-            position: absolute;
-            height: 0%;
-            width: 100%;
-            padding-bottom: 100%;
-            background-color: var(--uib-color);
-            border-radius: 50%;
-        }
-
-        .circle:nth-child(1) {
-            bottom: 5%;
-            left: 0;
-            transform: rotate(60deg);
-            transform-origin: 50% 85%;
-        }
-
-        .circle:nth-child(1)::after {
-            bottom: 0;
-            left: 0;
-            animation: wobble1 var(--uib-speed) infinite ease-in-out;
-            animation-delay: calc(var(--uib-speed) * -0.3);
-        }
-
-        .circle:nth-child(2) {
-            bottom: 5%;
-            right: 0;
-            transform: rotate(-60deg);
-            transform-origin: 50% 85%;
-        }
-
-        .circle:nth-child(2)::after {
-            bottom: 0;
-            left: 0;
-            animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
-        }
-
-        .circle:nth-child(3) {
-            bottom: -5%;
-            left: 0;
-            transform: translateX(116.666%);
-        }
-
-        .circle:nth-child(3)::after {
-            top: 0;
-            left: 0;
-            animation: wobble2 var(--uib-speed) infinite ease-in-out;
-        }
-
-        @keyframes spin78236 {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(720deg);
-            }
-        }
-
-        @keyframes wobble1 {
-
-            0%,
-            100% {
-                transform: translateY(0%) scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateY(-66%) scale(0.65);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes wobble2 {
-
-            0%,
-            100% {
-                transform: translateY(0%) scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateY(66%) scale(0.65);
-                opacity: 0.8;
-            }
-        }
-    </style>
-    <script>
+    <!-- <script>
         $(window).on("load", function () {
             $(".preloader-wrapper").fadeOut("slow")
         });
@@ -153,12 +41,12 @@
                 <div class="circle"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="goToTop px-2 py-1">
         <a href="#" class="text-decoration-none letterTransition text-end" style="color: transparent;">
-            Go To Top <i class="fa-solid fa-arrow-up" style="text-shadow: none; font-size: 1rem;"></i>
+            Go To Top <i class="fa-solid fa-arrow-up" style="text-shadow: none; font-size: 0.75rem;"></i>
         </a>
     </div>
 
@@ -206,10 +94,9 @@
                 <p class="ps-lg-5 ps-3 p-0 h2 logoText">K.</p>
             </a>
             <div class="container col-10 d-flex justify-content-end ms-auto">
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas"
+                <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                     <i class="fa-solid fa-bars-staggered"></i>
-
 
                 </button>
                 <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
@@ -233,9 +120,16 @@
                             <a class="nav-link text-white text-primary-hover" aria-current="page"
                                 href="#achievements">Achievements</a>
                         </li>
-                        <li class="nav-item letterTransition">
-                            <a class="nav-link text-white text-primary-hover" aria-current="page"
+                        <li class="nav-item moreOptions">
+                            <a class="nav-link text-white letterTransition text-primary-hover" aria-current="page"
                                 href="#projects">Projects</a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="projects.html"
+                                        class="text-white letterTransition text-decoration-none">Visit my all Projects
+                                        <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item letterTransition">
                             <a class="nav-link text-white text-primary-hover" aria-current="page"
@@ -296,7 +190,7 @@
 
                 <span class="cir">
                     <img src="assets/images/about.png" alt=""
-                        class="img-fluid position-absolute rounded-circle w-100 h-100 draggable=" false">
+                        class="img-fluid position-absolute rounded-circle w-100 h-100" draggable="false">
                 </span>
             </div>
 
@@ -576,7 +470,7 @@
                             style="width: 65%; background-color: #26a1f8;">Improving</div>
                     </div>
                 </div>
-                <div class="col-5 my-3 ">
+                <div class="col-md-5 col-12 my-3 ">
                     <p class="text-white h5 px-3">
                         <img src="assets/images/PS.png" alt="" style="max-width: 30px;"
                             class="img-fluid pb-2 me-2 m-0 p-0 h-100">
@@ -588,7 +482,7 @@
                             style="width: 65%; background-color: #001125;">Improving</div>
                     </div>
                 </div>
-                <div class="col-7 my-3 ">
+                <div class="col-md-7 col-12 my-3 ">
                     <p class="text-white h5 px-3">
                         <i class="fa-brands fa-figma pe-3"></i>
                         Figma
@@ -649,7 +543,43 @@
         <div class="container">
             <p class="heading pt-5 my-5 text-white" style="font-size: 4rem; font-weight: 700;">Projects</p>
 
-            <div class="cardHead m-auto mt-5">
+            <div class="d-md-none p-2 d-flex">
+                <div class="card mx-1 rounded-3 my-2 col-7">
+                    <div class="cardImg">
+                        <img src="assets/images/pr1-coffee.png" class="img-fluid rounded-3 mb-4" alt="">
+                    </div>
+                    <div class="cardTitle">
+                        <p class="h3">Coffee Market</p>
+                    </div>
+                </div>
+                <div class="card mx-1 rounded-3 my-2 col-5">
+                    <div class="cardImg">
+                        <img src="assets/images/pr3-Ecom.png" class="img-fluid rounded-3 mb-4" alt="">
+                    </div>
+                    <div class="cardTitle">
+                        <p class="h3">Nestify e-commerce</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-md-none p-2 d-flex">
+                <div class="card mx-1 rounded-3 my-2 col-5">
+                    <div class="cardImg">
+                        <img src="assets/images/pr2-Dekoro.png" class="img-fluid rounded-3 mb-4" alt="">
+                    </div>
+                    <div class="cardTitle">
+                        <p class="h3">Dekoro</p>
+                    </div>
+                </div>
+                <div class="card mx-1 rounded-3 my-2 col-7">
+                    <div class="cardImg">
+                        <img src="assets/images/pr4-live-a2z.png" class="img-fluid rounded-3 mb-4" alt="">
+                    </div>
+                    <div class="cardTitle">
+                        <p class="h3">AtoZ Furnishing (Live Project)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardHead m-auto d-none d-md-flex mt-5">
                 <div class="ProCard" onclick="window.location.href='projects.html'">
                     <img class="rounded-3" src="assets/images/pr1-coffee.png">
                 </div>

@@ -22,123 +22,6 @@
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/jquery-3.6.1.min.js"></script>
 
-    <!-- forPreloading -->
-    <style>
-        header {
-            margin: 0 !important;
-            border-radius: 0 !important;
-        }
-
-        #preloader {
-            height: 100vh;
-            z-index: 1000;
-            /* transition: 2s all !important; */
-        }
-
-        .preloader {
-            --uib-size: 35px;
-            --uib-speed: 0.8s;
-            --uib-color: #5D3FD3;
-            position: relative;
-            display: inline-block;
-            height: var(--uib-size);
-            width: var(--uib-size);
-            animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
-        }
-
-        .circle {
-            position: absolute;
-            height: 100%;
-            width: 30%;
-        }
-
-        .circle:after {
-            content: '';
-            position: absolute;
-            height: 0%;
-            width: 100%;
-            padding-bottom: 100%;
-            background-color: var(--uib-color);
-            border-radius: 50%;
-        }
-
-        .circle:nth-child(1) {
-            bottom: 5%;
-            left: 0;
-            transform: rotate(60deg);
-            transform-origin: 50% 85%;
-        }
-
-        .circle:nth-child(1)::after {
-            bottom: 0;
-            left: 0;
-            animation: wobble1 var(--uib-speed) infinite ease-in-out;
-            animation-delay: calc(var(--uib-speed) * -0.3);
-        }
-
-        .circle:nth-child(2) {
-            bottom: 5%;
-            right: 0;
-            transform: rotate(-60deg);
-            transform-origin: 50% 85%;
-        }
-
-        .circle:nth-child(2)::after {
-            bottom: 0;
-            left: 0;
-            animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
-        }
-
-        .circle:nth-child(3) {
-            bottom: -5%;
-            left: 0;
-            transform: translateX(116.666%);
-        }
-
-        .circle:nth-child(3)::after {
-            top: 0;
-            left: 0;
-            animation: wobble2 var(--uib-speed) infinite ease-in-out;
-        }
-
-        @keyframes spin78236 {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(720deg);
-            }
-        }
-
-        @keyframes wobble1 {
-
-            0%,
-            100% {
-                transform: translateY(0%) scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateY(-66%) scale(0.65);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes wobble2 {
-
-            0%,
-            100% {
-                transform: translateY(0%) scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateY(66%) scale(0.65);
-                opacity: 0.8;
-            }
-        }
-    </style>
     <script>
         $(window).on("load", function () {
             $(".preloader-wrapper").fadeOut("slow")
@@ -158,9 +41,16 @@
             </div>
         </div>
     </div>
+    <style>
+        header {
+            margin: 0 !important;
+            border-radius: 0 !important;
+        }
+    </style>
+
     <div class="goToTop">
         <a href="#home" class="text-decoration-none text-end" style="color: transparent;">
-            Go To Top <!--<i class="fa-solid fa-arrow-up" style="text-shadow: none; font-size: 0.75rem;"></i>  -->
+            Go To Top <i class="fa-solid fa-arrow-up" style="text-shadow: none; font-size: 0.75rem;"></i>
         </a>
     </div>
 
