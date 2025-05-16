@@ -1,0 +1,123 @@
+@media (max-width: 575px) {
+    .bannerContent p {
+        font-size: 1.2em !important;
+    }
+
+    .bannerContent {
+        width: 80%;
+    }
+
+    .uniButton {
+        padding: 15px 25px !important;
+        font-size: 0.8rem;
+    }
+
+    .multiCurves {
+        border-radius: 0.75rem;
+    }
+
+    .bannerQuote {
+        padding: 50px 15px;
+        margin: 15px;
+        font-size: 20px !important;
+    }
+
+    .featuredProductExplore .img-fluid-c {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .featuredProductExplore .img-fluid-c:hover {
+        transform: scale(1.1) translateY(-30px);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.393);
+        z-index: 100 !important;
+    }
+
+    .featuredProductExplore .img-fluid-c img:hover {
+        transform: scale(2) translateY(-300px);
+    }
+}
+
+@media (min-width:576px) {
+    .bannerContent p {
+        font-size: 1.2em !important;
+    }
+
+    .multiCurves {
+        border-radius: 0.75rem;
+    }
+
+    .bannerContent {
+        width: 80%;
+    }
+
+    .bannerQuote {
+        padding: 50px 15px;
+        margin: 15px;
+        font-size: 20px !important;
+    }
+
+    .featuredProductExplore .img-fluid-c {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    ::-webkit-scrollbar:hover {
+        width: 0px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+
+}
+
+@media (min-width:768px) {
+    .bannerContent p {
+        font-size: 1em !important;
+    }
+
+    .bannerContent {
+        width: 50%;
+    }
+
+    .multiCurves {
+        border-radius: 1rem;
+    }
+
+    .bannerQuote {
+        padding: 50px 25px;
+        margin: 40px;
+        font-size: 25px !important;
+    }
+
+    .overflow-auto::-webkit-scrollbar:hover {
+        width: 0px;
+    }
+
+    .overflow-auto::-webkit-scrollbar {
+        width: 0px;
+        height: 85px;
+    }
+
+    .overflow-auto::-webkit-scrollbar-thumb {
+        background-image: url(../images/woodenTexture2.jpg);
+        background-attachment: fixed;
+        background-size: contain;
+        border-radius: 1.5rem;
+    }
+
+}
+
+@media (min-width:992px) {
+    .featuredProductExplore .img-fluid-c {
+        max-width: unset !important;
+        height: 500px !important;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.393);
+    }
+
+    .featuredProductExplore .img-fluid-c:active {
+        transform: scale(1.2) translateX(-180px);
+    }
+}

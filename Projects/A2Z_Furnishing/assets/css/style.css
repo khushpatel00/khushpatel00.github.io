@@ -1,0 +1,178 @@
+/* primary 007074 */
+/* seconadary FFC1B4 */
+/* tertiary 007074 */
+/* bg 034C53 */
+header {
+  z-index: 99 !important;
+  background: #ffffff7c;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border-radius: 0 0 15px 15px;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #000;
+  transition: 0.5s;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.conatiner {
+  transition: 1s;
+}
+
+.bannerQuote {
+  background-color: #f2f8fc;
+}
+
+p.heading {
+  position: relative;
+}
+
+p.heading:after {
+  position: absolute;
+  content: '';
+  box-sizing: border-box;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  bottom: 0px;
+  left: 0px;
+}
+
+.featuredProductExplore:hover {
+  transform: scale(0.95);
+}
+
+.featuredProductExplore:hover img {
+  transform: scale(1.05);
+}
+
+.featuredProductExplore img {
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.featuredProductExplore {
+  transition: 0.5s;
+}
+
+
+.exploreContent {
+  bottom: 20%;
+  left: 15%;
+  font-size: 25px;
+  font-weight: 900;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #00000075;
+}
+
+.featuredProductExplore .img-fluid-c {
+  transition: 0.5s;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-disabled {
+  cursor: no-drop;
+}
+
+.heavyFont {
+  font-weight: 700;
+}
+
+.bigger {
+  font-size: 1.75em;
+}
+
+.font-thin {
+  font-weight: 300;
+}
+
+.sub-icons {
+  font-size: 15px;
+}
+
+.sub-icons i {
+  font-size: 24px !important;
+}
+
+.h1 {
+  font-family: poppins;
+}
+
+.exploreImg img {
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.exploreImg:hover img {
+  transform: scale(1.05) translateY(-20px);
+  box-shadow: 0 1rem 1.05rem rgba(0, 0, 0, 0.266) !important;
+}
+
+.uniButton {
+  transition: 0.2s ease-out;
+}
+
+.uniButton:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.316);
+}
+
+.uniButton:active {
+  transform: scale(0.95);
+}
+.zoomscroll{
+  animation: zoomScroll;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+@keyframes zoomScroll {
+  0%{
+    transform: scale(1.2) translateY(150px);
+    filter: blur(20px);
+
+  }
+  50%{
+    transform: scale(1) translateY(100px);
+    filter: blur(10px);
+  }
+  100%{
+    transform: scale(1) translateY(0px);
+    filter: blur(0);
+  }
+}
+.zoomscrollAlt{
+  animation: zoomScrollAlt;
+  animation-timeline: view();
+  animation-range: entry -50% cover 50%;
+  transition: 0.5s;
+}
+@keyframes zoomScrollAlt {
+  0%{
+    transform: scale(1.2) translateY(-300%);
+    filter: blur(20px);
+
+  }
+
+  100%{
+    visibility: visible;
+    transform: scale(1) translateY(0px);
+    filter: blur(0);
+  }
+}
