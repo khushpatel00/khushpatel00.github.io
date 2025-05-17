@@ -1,4 +1,4 @@
-@media (max-width: 575px) {
+@media (max-width: 575px) /*xs -- */ {
     .bannerImage {
         display: none;
     }
@@ -45,7 +45,7 @@
     }
 }
 
-@media (min-width:576px) {
+@media (min-width:576px)/*sm ++ */ {
     .bannerImage {
         display: none;
     }
@@ -83,7 +83,7 @@
     }
 }
 
-@media (min-width:768px) {
+@media (min-width:768px)/*md ++ */ {
     .about span {
         font-size: 20px;
         padding-right: 5px;
@@ -121,15 +121,22 @@
 
 }
 
-@media (min-width:992px) {
+@media (min-width:992px)/*lg ++ */ {
     .bannerImage {
         display: unset;
         width: 25%;
     }
+    .rotateLg {
+        transform: rotate(90deg);
+    }
+    .rotateLg:active{
+        transform: scale(1.75) !important;
+    }
 }
 
-@media (min-width:1200px) {
+@media (min-width:1200px)/*xl ++ */ {
     .bannerImage {
         width: 20%;
     }
+    
 }
