@@ -25,7 +25,7 @@
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/jquery-3.6.1.min.js"></script>
 
-    <script>
+    <!-- <script>
         $(window).on("load", function () {
             $(".preloader-wrapper").fadeOut("slow")
         });
@@ -41,7 +41,7 @@
                 <div class="circle"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="goToTop px-2 py-1">
@@ -53,15 +53,15 @@
 
     <!-- header start -->
 
-    <div class="offcanvas offcanvas-end text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-        aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header bg-black">
+    <div class="offcanvas bg-transparent offcanvas-end w-100  text-bg-dark border-0" data-bs-scroll="true" tabindex="-1"
+        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header bg-black rounded-3 m-3 mb-0 ">
             <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
             <button type="button" class="btn-close bg-white px-3 " data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body bg-black" style="background-color: transparent;">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+        <div class="offcanvas-body">
+            <ul class="navbar-nav bg-black m-0 p-4 rounded-3 ms-5 mb-5 mb-lg-0 ">
                 <li class="nav-item letterTransition" data-bs-dismiss="offcanvas">
                     <a class="nav-link active text-primary" aria-current="page" href="#">Home</a>
                 </li>
@@ -207,8 +207,12 @@
 
             <div class="row d-flex grid">
                 <div class="col-12">
-                    <h2 class="emoji"><span style="font-size: 60px; margin-left: -10px;">👋</span> <br> I'm a
-                        FullStack Developer</h2>
+                    <div class="col-1">
+                        <p class="emoji ">
+                            <span style="font-size: 60px; margin-left: -10px;">👋</span>
+                        </p>
+                    </div>
+                    <h2>I'm a FullStack Developer</h2>
                 </div>
                 <div class="col-12 pt-5">
                     <a href="https://github.com/khushpatel00" target="_new" class="text-decoration-none text-black"><i
@@ -505,17 +509,21 @@
             <div class="achievements row d-flex">
                 <div class="col-12">
                     <div class="row">
-                        <div class="achieve-img col-6">
+                        <div class="achieve-img col-lg-6 col-12 ">
                             <img src="assets/images/techwarParticipation.png" alt="" class="img-fluid rounded w-100">
                         </div>
-                        <dic class="row col-6">
+                        <div class="row col-lg-6 col-12 ">
                             <div class="achieve-img col-lg-6 col-12 mt-lg-5 ">
-                                <img src="assets/images/techwarWinning.png" alt="" style="transition: 2s cubic-bezier(0.04, 0.89, 0, 1.01);" class="img-fluid rounded w-100 ms-5 mt-5 rotateLg">
+                                <img src="assets/images/techwarWinning.png" alt=""
+                                    style="transition: 2s cubic-bezier(0.04, 0.89, 0, 1.01);"
+                                    class="img-fluid rounded w-100 m-auto mt-5 rotateLg">
                             </div>
                             <div class="achieve-img col-lg-6 col-12 mt-lg-5 ">
-                                <img src="assets/images/techwarWinning.png" alt="" style="transition: 2s cubic-bezier(0.04, 0.89, 0, 1.01);" class="img-fluid rounded w-100 ms-5 mt-5 rotateLg">
+                                <img src="assets/images/techwarWinning.png" alt=""
+                                    style="transition: 2s cubic-bezier(0.04, 0.89, 0, 1.01);"
+                                    class="img-fluid rounded w-100 m-auto mt-5 rotateLg">
                             </div>
-                        </dic>
+                        </div>
                     </div>
                     <div class="achieve-content">
                         <p class="text-white mb-5">
