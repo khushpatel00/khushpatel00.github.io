@@ -18,21 +18,31 @@
 </head>
 
 
-<body class="bg-black" id="home">
+<body class="bg-black" id="main-content">
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/jquery-3.6.1.min.js"></script>
 
     <script>
-        $(window).on("load", function () {
-            $(".preloader-wrapper").fadeOut("slow")
+        window.addEventListener("load", function () {
+            const preloader = document.querySelector(".preloader-wrapper");
+            const mainContent = document.getElementById("main-content");
+            const body = document.body;
 
+            // Add the 'loaded' class to trigger the animation
+            preloader.classList.add("loaded");
+            body.classList.add("loaded"); // Allow scrolling on body
 
+            // After the animation completes, hide the preloader and show main content
+            preloader.addEventListener("animationend", function () {
+                preloader.style.display = "none";
+                mainContent.classList.remove("hidden"); // Show the main content
+            });
         });
     </script>
 
 
 
-    <div id="preloader" class="position-fixed top-0 start-0 w-100 bg-black preloader-wrapper">
+    <div id="preloader" class="position-fixed top-0 start-0 w-100 preloader-wrapper">
         <div class="d-flex justify-content-center h-100 align-items-center">
             <div class="preloader">
                 <div class="circle"></div>
@@ -45,6 +55,29 @@
         header {
             margin: 0 !important;
             border-radius: 0 !important;
+        }
+        .preloader-wrapper{
+            background-color: black;
+        }
+        @keyframes fadeOutUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+                background-color: black;
+            }
+            20%{
+                filter: blur(5px); 
+            }
+            100% {
+                background-color: transparent !important;
+                opacity: 0;
+                filter: blur(10px);
+                transform: translateY(-150%);
+            }
+        }
+
+        .preloader-wrapper.loaded {
+            animation: fadeOutUp 3s forwards; 
         }
     </style>
 
@@ -173,7 +206,7 @@
                             aim of growing their brand. The website features a clean design, showcasing a wooden
                             sideboard in a stylishly arranged room. It appears to be a place where customers can find
                             diverse furniture options for their homes. <br>
-                        <p class="text-lg-end"><a href="Projects/A2Z_Furnishing/index.html" target="_blank"
+                        <p><a href="Projects/A2Z_Furnishing/index.html" target="_blank"
                                 class="Button text-decoration-none">Visit Site</a></p>
                         </p>
                     </div>
@@ -193,8 +226,10 @@
                             and seller accounts for selling personal items. To purchase Nestify furniture, it's
                             recommended to visit their official website or explore their offerings in regions such as
                             Australia or on platforms available in India.</p>
-                        <a href="Projects/Nestify/index.html" target="_blank" class="Button text-decoration-none">Visit
-                            Site</a>
+                        <p class="text-lg-end">
+                            <a href="Projects/Nestify/index.html" target="_blank" class="Button text-decoration-none">Visit
+                                Site</a>
+                        </p>
                     </div>
                 </div>
 
@@ -231,7 +266,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 blurry col-12">
                     <div class="outer mx-3 mt-5">
                         <div class="dot"></div>
@@ -245,7 +280,7 @@
                             <div class="line rightl"></div>
                         </div>
                     </div>
-                    <div class="outer mx-3 mt-5"> 
+                    <div class="outer mx-3 mt-5">
                         <div class="dot"></div>
                         <div class="SkillCard">
                             <div class="ray"></div>
@@ -258,7 +293,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-12 blurry  py-5"  style="margin-top: 200px;">
+                <div class="col-lg-4 col-12 blurry  py-5" style="margin-top: 200px;">
 
                     <div class="outer mx-3 my-5">
                         <div class="dot"></div>
