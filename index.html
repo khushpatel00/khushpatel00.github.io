@@ -26,14 +26,24 @@
     <script src="assets/js/jquery-3.6.1.min.js"></script>
 
     <script>
-        $(window).on("load", function () {
-            $(".preloader-wrapper").fadeOut("slow")
+        window.addEventListener("load", function () {
+            const preloader = document.querySelector(".preloader-wrapper");
+            const mainContent = document.getElementById("main-content");
+            const body = document.body;
+
+            preloader.classList.add("loaded");
+            body.classList.add("loaded");
+
+            preloader.addEventListener("animationend", function () {
+                preloader.style.display = "none";
+                mainContent.classList.remove("hidden"); 
+            });
         });
     </script>
 
 
 
-    <div id="preloader" class="position-fixed top-0 start-0 w-100 bg-black preloader-wrapper">
+    <div id="preloader" class="position-fixed top-0 start-0 w-100  preloader-wrapper">
         <div class="d-flex justify-content-center h-100 align-items-center">
             <div class="preloader">
                 <div class="circle"></div>
@@ -42,7 +52,34 @@
             </div>
         </div>
     </div>
+    <style>
+        .preloader-wrapper {
+            background-color: black;
+        }
 
+        @keyframes fadeOutUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+                background-color: black;
+            }
+
+            20% {
+                filter: blur(5px);
+            }
+
+            100% {
+                background-color: transparent !important;
+                opacity: 0;
+                filter: blur(10px);
+                transform: translateY(-150%);
+            }
+        }
+
+        .preloader-wrapper.loaded {
+            animation: fadeOutUp 3s forwards;
+        }
+    </style>
 
     <div class="goToTop px-2 py-1">
         <a href="#" class="text-decoration-none letterTransition text-end" style="color: transparent;">
