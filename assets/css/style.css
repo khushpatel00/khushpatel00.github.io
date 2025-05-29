@@ -361,6 +361,7 @@ section.contact {
 
 .achieve-img {
   animation-range: entry -10% exit 600% !important;
+  cursor: grab;
 }
 
 /* .progress:hover .progress-bar {
@@ -969,4 +970,8 @@ p.contact.heading:after {
 .cards .outer:hover{
   transform: translateY(-15px);
   box-shadow: 0px 40px 66px -45px rgba(255, 255, 255, 0.404);
+}
+
+.moreProjects .projectIcon{
+
 }
