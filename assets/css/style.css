@@ -978,14 +978,18 @@ p.contact.heading:after {
   width: 2px;
   height: 1000%;
   background-color: white;
+  opacity: 25%;
   content: '';
   position: absolute;
 }
-.moreProjects .projectIcon::{
+.moreProjects .projectIconX::after{
   top: 50%;
   transform: translateY(-50%);
-  width: 800%;
+  left: -2500%;
+  width: 300vw;
   height: 2px;
-  background-color: red ;
+  background-color: white ;
+  opacity: 25%;
   position: absolute;
+  content: '';
 }
