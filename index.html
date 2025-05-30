@@ -36,19 +36,73 @@
 
             preloader.addEventListener("animationend", function () {
                 preloader.style.display = "none";
-                mainContent.classList.remove("hidden"); 
-            });
+                mainContent.classList.remove("hidden");
+            }); 
         });
     </script>
     <div id="preloader" class="position-fixed top-0 start-0 w-100  preloader-wrapper">
         <div class="d-flex justify-content-center h-100 align-items-center">
-            <div class="preloader">
+            <!-- <div class="preloader ">
                 <div class="circle"></div>
                 <div class="circle"></div>
                 <div class="circle"></div>
-            </div>
+            </div> -->
+            <div class="preloader2 "></div>
         </div>
     </div>
+ 
+    <style> 
+        .preloader2 { 
+            --uib-size: 80px; 
+            --uib-color: rgb(255, 255, 255);
+            --uib-speed: 1.4s;
+            --uib-stroke: 5px;
+            --uib-bg-opacity: .1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: var(--uib-stroke);
+            width: var(--uib-size);
+            border-radius: calc(var(--uib-stroke) / 2);
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .preloader2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--uib-color);
+            opacity: var(--uib-bg-opacity);
+            transition: background-color 0.3s ease;
+        }
+
+        .preloader2::after {
+            content: '';
+            height: 100%;
+            width: 100%; 
+            border-radius: calc(var(--uib-stroke) / 2);
+            animation: zoom var(--uib-speed) ease-in-out infinite;
+            transform: translateX(-100%);
+            background-color: var(--uib-color);
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes zoom {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+
     <style>
         .preloader-wrapper {
             background-color: black;
@@ -62,7 +116,7 @@
 
             20% {
                 opacity: 0.2;
-                filter: blur(5px); 
+                filter: blur(5px);
             }
 
             100% {
@@ -158,8 +212,8 @@
                                 href="#projects">Projects</a>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="/projects"
-                                        class="text-white letterTransition text-decoration-none">Visit my all Projects
+                                    <a href="/projects" class="text-white letterTransition text-decoration-none">Visit
+                                        my all Projects
                                         <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
                                 </li>
                             </ul>
@@ -646,9 +700,10 @@
                 <div class="ProCard">
                     <img class="rounded-3" src="assets/images/pr4-live-a2z.png"
                         onclick="window.location.href='Projects.html'">
-                </div> 
+                </div>
             </div>
-            <div class="moreProjects overflow-hidden position-relative shadow-lg bg-dark pt-5 pb-4 rounded-4 my-5 col-xl-8 col-12 mx-auto  blurry">
+            <div
+                class="moreProjects overflow-hidden position-relative shadow-lg bg-dark pt-5 pb-4 rounded-4 my-5 col-xl-8 col-12 mx-auto  blurry">
                 <p class="h2 text-white text-center">Visit my more <a class="letterTransition"
                         href="projects.html">Projects</a>
                     like
