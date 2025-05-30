@@ -42,16 +42,16 @@
     </script>
     <div id="preloader" class="position-fixed top-0 start-0 w-100  preloader-wrapper">
         <div class="d-flex justify-content-center h-100 align-items-center">
-            <div class="preloader">
+            <!-- <div class="preloader">
                 <div class="circle"></div>
                 <div class="circle"></div>
                 <div class="circle"></div>
-            </div>
-            <!-- <div class="preloader2"></div> -->
+            </div> -->
+            <div class="preloader2"></div>
         </div>
     </div>
  
-    <!-- <style>
+    <style>
         .preloader2 { 
             --uib-size: 80px; 
             --uib-color: rgb(255, 255, 255);
@@ -101,7 +101,7 @@
                 transform: translateX(100%);
             }
         }
-    </style> -->
+    </style>
 
     <style>
         .preloader-wrapper {
@@ -115,9 +115,9 @@
             }
 
             20% {
-                opacity: 0.2;
+                opacity: 0.4;
                 filter: blur(5px);
-            }
+            } 
 
             100% {
                 background-color: transparent !important;
@@ -127,7 +127,7 @@
         }
 
         .preloader-wrapper.loaded {
-            animation: fadeOutUp 2s forwards;
+            animation: fadeOutUp 1s forwards;
         }
     </style>
 
