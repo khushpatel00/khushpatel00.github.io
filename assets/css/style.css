@@ -911,8 +911,7 @@ p.contact.heading:after {
   height: 100%;
   border-radius: 9px;
   border: solid 1px #202222;
-  background-size: 20px 20px;
-  background: radial-gradient(circle 280px at 0% 0%, #444444, #000000);
+  background: radial-gradient(circle 280px at 0% 0%, #444444, #000000) 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
