@@ -1,10 +1,8 @@
-@media (max-width: 575px) /*xs -- */ {
+@media (max-width: 575px)
+/*xs -- */
+    {
     .bannerImage {
         display: none;
-    }
-
-    .bannerTitle {
-        font-size: 40px;
     }
 
     .about span {
@@ -27,7 +25,7 @@
 
     header {
         margin: 5% 5% 0;
-        transition: 1s cubic-bezier(1,-1.24, 0, 1.38);
+        transition: 1s cubic-bezier(1, -1.24, 0, 1.38);
     }
 
     @keyframes appearAbout {
@@ -45,14 +43,13 @@
     }
 }
 
-@media (min-width:576px)/*sm ++ */ {
+@media (min-width:576px)
+/*sm ++ */
+    {
     .bannerImage {
         display: none;
     }
 
-    .bannerTitle {
-        font-size: 50px;
-    }
 
     .about span {
         font-size: 13px;
@@ -83,7 +80,9 @@
     }
 }
 
-@media (min-width:768px)/*md ++ */ {
+@media (min-width:768px)
+/*md ++ */
+    {
     .about span {
         font-size: 20px;
         padding-right: 5px;
@@ -97,9 +96,6 @@
         font-size: 20px;
     }
 
-    .bannerTitle {
-        font-size: 70px;
-    }
 
     .achieve-img img {
         width: 50%;
@@ -121,22 +117,28 @@
 
 }
 
-@media (min-width:992px)/*lg ++ */ {
+@media (min-width:992px)
+/*lg ++ */
+    {
     .bannerImage {
         display: unset;
         width: 25%;
     }
+
     .rotateLg {
         transform: rotate(90deg);
     }
-    .rotateLg:active{
+
+    .rotateLg:active {
         transform: scale(1.75) !important;
     }
 }
 
-@media (min-width:1200px)/*xl ++ */ {
+@media (min-width:1200px)
+/*xl ++ */
+    {
     .bannerImage {
         width: 20%;
     }
-    
+
 }
