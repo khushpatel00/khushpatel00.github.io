@@ -450,7 +450,7 @@ transform: translateX(0%);
 }
 
 .bannerTitle {
-  font-size: clamp(50px, 80px, 100px);
+  font-size: clamp(30px, 50px, 100px);
   font-weight: 900;
   color: transparent;
   /* padding: 100px 0 50px; */
