@@ -254,11 +254,21 @@ a {
     box-shadow: inset -5px -15px 20px -10px whitesmoke;
   }
 }
-
+@supports (-moz-appearance: none) {
+    /* CSS rules here will only apply in Firefox */
+    .goToTop {
+        bottom: 0 !important;
+        right: 0 !important;
+        margin: 10px;
+    }
+    
+}
 .goToTop {
   animation: GoToTopAnim;
+  -webkit-animation: GoToTopAnim;
   animation-timeline: scroll(y);
-  position: fixed;
+  -webkit-animation-timeline: scroll(y);
+  position: fixed; 
   right: 12px;
   color: transparent;
   font-size: 1.25rem;
