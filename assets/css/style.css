@@ -960,20 +960,20 @@ p.contact.heading:after {
   background-color: #2c2c2c;
 }
 .SkillCard .topl {
-  top: 10%;
+  top: 8%;
   background: linear-gradient(90deg, #888888 30%, #1d1f1f 70%);
 }
 .SkillCard .bottoml {
   bottom: 10%;
 }
 .SkillCard .leftl {
-  left: 10%;
+  left: 5%;
   width: 1px;
   height: 100%;
   background: linear-gradient(180deg, #747474 30%, #222424 70%);
 }
 .SkillCard .rightl {
-  right: 10%;
+  right: 5%;
   width: 1px;
   height: 100%;
 }
