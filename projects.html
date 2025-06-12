@@ -63,18 +63,18 @@
                 background-color: black;
             }
             20% {
-                opacity: 0.2;
+                opacity: 0.4;
                 filter: blur(5px);
             }
             100% {
                 background-color: transparent !important;
-                opacity: 0;
+                opacity: 0; 
                 filter: blur(10px);
             }
         }
         .preloader-wrapper.loaded {
-            animation: fadeOutUp 2s forwards;
-        }
+            animation: fadeOutUp 1s forwards;
+        }  
     </style>
 
     <div class="goToTop">
@@ -161,14 +161,14 @@
                 <div class="col-12 row mt-5">
                     <div class="project-img openSiteIframe position-relative col-lg-6 col-12 order-1" id="openSiteIframe">
                         <div class="ribbon">css + mq</div>
-                        <a target="_blank"><img src="assets/images/pr1-coffee.png" class="img-fluid rounded" alt=""></a>
-                        <iframe class="WebPreview d-none" id="WebPreviewCoffee" src="Projects/CoffeeMarket/index.html" frameborder="0"></iframe>
+                        <a target="_blank"><img src="assets/images/pr1-coffee.png" class="img-fluid rounded" id="coffeeImageIframe" alt=""></a>
+                        <iframe class="WebPreview h-0 rounded-2" id="WebPreviewCoffee" src="Projects/CoffeeMarket/index.html" frameborder="0"></iframe>
                     </div> 
                     <div class="project-content col-lg-6 col-12 order-2">
                         <p class="h1">Coffee Market</p>
                         <p class="text-white py-4" style="font-family: poppins; font-size: 0.85em; text-align: justify;">Coffee King delivers an exceptional coffee experience with a beautifully designed website. From rich espresso blends to freshly brewed delights, it showcases premium coffee selections. The site offers seamless navigation, modern aesthetics, and a user-friendly interface. Customers can explore menu options, place orders, and learn about the coffee-making process. Designed for elegance and efficiency, Coffee King ensures a delightful online experience.</p>
                         <a href="Projects/CoffeeMarket/index.html" target="_blank" class="Button text-decoration-none">Visit Site</a>
-                    </div>
+                    </div> 
                 </div>
 
 
