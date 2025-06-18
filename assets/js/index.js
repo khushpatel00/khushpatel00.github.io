@@ -7,11 +7,10 @@ const iFrameOpen = function(){
     // revertIFrame = document.getElementsByClassName("revertIFrame");
     iFrameElement.onclick = function(){
         iFrameElement.classList.remove("col-lg-6","col-12");
-        iFrameElement.classList.add("col-10", "mx-auto", "mt-5");
+        iFrameElement.classList.add("col-10", "mx-auto", "mt-5", "ps-5");
         iFrameElementCoffee.classList.remove("h-0");
-        // iFrameElementCoffee.classList.add("h-100");
         iFrameImageCoffee.classList.add("d-none");
-        // revertIFrame.classList.add("d-flex");
+        // revertIFrame.classList.add("d-flex","text-danger");
         // revertIFrame.classList.remove("d-none");
     }; 
     // revertIFrame.onclick = function(){
