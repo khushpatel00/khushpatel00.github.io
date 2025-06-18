@@ -712,13 +712,19 @@ p.contact.heading:after {
 
 /* education end*/
 /* project start*/
+.project-img img, .project-img-Hover{
+  cursor: pointer;
+}
+
 .project-img img,
+.project-img-Hover img,
 .achieve-img img,
 .blog-img img {
   transition: 1s cubic-bezier(0.04, 0.89, 0, 1.01);
 }
 
 .project-img img:hover,
+.project-img-Hover img:hover,
 .achieve-img img:hover,
 .blog-img img:hover {
   transform: scale(1.05);
