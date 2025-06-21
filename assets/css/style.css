@@ -467,7 +467,7 @@ transform: translateX(0%);
 }
 
 .bannerTitle {
-  font-size: clamp(30px, 50px, 100px);
+  font-size: clamp(30px, 40px, 100px);
   font-weight: 900;
   color: transparent;
   /* padding: 100px 0 50px; */
@@ -799,7 +799,7 @@ p.contact.heading:after {
   font-weight: bold;
   color: #fff;
   --f: .5em;
-  --r: .8em;
+  --r: .8em;  
   position: absolute;
   top: 20px;
   left: calc(-0.115*var(--f));
@@ -881,7 +881,6 @@ p.contact.heading:after {
 #drop.over {
   border-color: #333;
 }
-
 
 
 .cards .outer {
@@ -1010,7 +1009,7 @@ p.contact.heading:after {
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 1000%;
+  height: 100vh;
   background-color: white;
   opacity: 25%;
   content: '';
@@ -1019,9 +1018,9 @@ p.contact.heading:after {
 
 .moreProjects .projectIconX::after {
   top: 50%;
-  transform: translateY(-50%);
-  left: -2500%;
-  width: 300vw;
+  transform: translateY(50%);
+  right: -100%;
+  width: 200vw;
   height: 2px;
   background-color: white;
   opacity: 25%;
